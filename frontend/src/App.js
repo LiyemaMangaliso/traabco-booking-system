@@ -11,6 +11,8 @@ import Profile from "./pages/Profile";
 import ServicesCatalog from "./pages/ServicesCatalog";
 import Engagements from "./pages/Engagements";
 import AdminDashboard from "./pages/AdminDashboard"; // 1. Imported Admin Dashboard file
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 // Import registration sub-pages
 import RegisterBusinessDetails from "./pages/RegisterBusinessDetails";
@@ -70,6 +72,13 @@ function App() {
         } />
 
         {/* Registration Workflow Steps */}
+
+<Route path="/forgot-password" element={<ForgotPassword />} />
+
+<Route path="/reset-password" element={<ResetPassword />} />
+
+<Route path="/dashboard" element={<MyAccount bookings={userBookings} />} />
+        {/* Step 1 Route */}
         <Route path="/register" element={
           <RegisterBusinessDetails 
             businessName={businessName} setBusinessName={setBusinessName}

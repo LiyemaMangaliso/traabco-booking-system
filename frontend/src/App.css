@@ -1701,3 +1701,157 @@ My Account =========================================*/
   }
 }
 
+/* =====================================================
+   TRAABCO — Forgot password / Reset password
+   (all classes prefixed "au-")
+===================================================== */
+.au-page {
+  --au-navy: #0a2e5c;
+  --au-blue: #0d4a80;
+  --au-blue-link: #1b5f96;
+  --au-text: #111827;
+  --au-border: #cfd6df;
+  --au-green: #1f9d72;
+  --au-green-dark: #1d6b3f;
+  --au-green-bg: #e6f3d8;
+  --au-red: #d64545;
+  --au-amber: #d99a1e;
+
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--au-text);
+}
+
+.au-card {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Header bar */
+.au-header {
+  background: var(--au-navy);
+  color: #fff;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.au-header-brand { display: flex; align-items: center; gap: 12px; }
+.au-icon-box {
+  width: 40px; height: 40px;
+  background: var(--au-blue);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.au-brand-title { font-size: 16px; font-weight: 600; letter-spacing: 0.02em; }
+.au-brand-sub { font-size: 12px; color: rgba(255, 255, 255, 0.65); }
+.au-header-back {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  color: rgba(255, 255, 255, 0.7); font: inherit; font-size: 13px;
+}
+.au-header-back:hover { color: #fff; }
+
+.au-body { padding: 40px 24px 8px; }
+
+/* Lock icon + headings */
+.au-lock {
+  width: 28px; margin: 0 auto 28px;
+  color: #d6a23a;
+  display: flex; justify-content: center;
+}
+.au-title { font-size: 22px; font-weight: 500; text-align: center; margin: 0 0 12px; }
+.au-lead {
+  text-align: center; font-size: 14.5px; line-height: 1.6;
+  margin: 0 auto 32px; max-width: 440px; color: var(--au-text);
+}
+
+/* Form */
+.au-form { max-width: 420px; margin: 0 auto; }
+.au-label { display: block; font-size: 14px; margin: 0 0 10px; }
+.au-required { color: var(--au-red); }
+.au-input {
+  width: 100%; box-sizing: border-box;
+  padding: 12px 14px; font: inherit; font-size: 15px;
+  border: 1px solid var(--au-border); border-radius: 4px; background: #fff;
+}
+.au-input:focus { outline: 2px solid var(--au-blue-link); outline-offset: 1px; border-color: var(--au-blue-link); }
+.au-hint { font-size: 13.5px; line-height: 1.5; margin: 18px 0 20px; }
+
+.au-btn {
+  width: 100%; padding: 15px 16px; margin-top: 8px;
+  background: var(--au-blue); color: #fff;
+  border: 0; border-radius: 2px; cursor: pointer;
+  font: inherit; font-size: 15px;
+}
+.au-btn:hover:not(:disabled) { background: #0a3c69; }
+.au-btn:focus-visible { outline: 2px solid var(--au-blue-link); outline-offset: 2px; }
+.au-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.au-center { text-align: center; font-size: 13.5px; margin: 20px 0 0; }
+.au-link {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  color: var(--au-blue-link); font: inherit;
+}
+.au-link:hover, .au-help a:hover, .au-footer a:hover { text-decoration: underline; }
+
+/* Manual reset help block */
+.au-help { max-width: 440px; margin: 48px auto 0; font-size: 13.5px; line-height: 1.6; }
+.au-help-title { font-size: 14px; font-weight: 600; margin: 0 0 6px; }
+.au-help p { margin: 0; }
+.au-help a, .au-footer a { color: var(--au-blue-link); text-decoration: none; }
+
+/* Footer */
+.au-footer { padding: 36px 24px 16px; text-align: center; }
+.au-footer-line { margin: 0; font-size: 13px; }
+
+/* Verified banner */
+.au-verified {
+  display: flex; align-items: center; gap: 12px;
+  max-width: 440px; margin: 0 auto 40px; color: var(--au-green-dark);
+}
+.au-verified-title { font-size: 14.5px; font-weight: 500; }
+.au-verified-sub { font-size: 13px; color: var(--au-green); }
+.au-verified.is-expired { color: var(--au-red); }
+.au-verified.is-expired .au-verified-sub { color: var(--au-red); }
+
+/* Strength meter */
+.au-meter { display: flex; gap: 6px; margin: 14px 0 8px; }
+.au-meter-seg { flex: 1; height: 5px; border-radius: 3px; background: #e3e7ec; transition: background 0.2s; }
+.au-meter-seg.lvl-1 { background: var(--au-red); }
+.au-meter-seg.lvl-2 { background: var(--au-amber); }
+.au-meter-seg.lvl-3, .au-meter-seg.lvl-4 { background: var(--au-green); }
+.au-strength { font-size: 13px; margin: 0 0 22px; }
+.au-strength.lvl-1 { color: var(--au-red); }
+.au-strength.lvl-2 { color: var(--au-amber); }
+.au-strength.lvl-3, .au-strength.lvl-4 { color: var(--au-green-dark); }
+
+/* Requirements */
+.au-rules { margin: 8px 0 26px; }
+.au-rules-title { font-size: 13.5px; font-weight: 500; margin: 0 0 10px; }
+.au-rules ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.au-rules li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; }
+.au-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--au-red); flex-shrink: 0; }
+.au-rules li.met .au-dot { background: var(--au-green); }
+.au-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Match indicator */
+.au-match {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; margin: 18px 0 20px; font-size: 13.5px;
+}
+.au-match.ok { background: var(--au-green-bg); color: var(--au-green-dark); }
+.au-match.bad { background: #fbe8e8; color: #9b2c2c; }
+
+.au-note { font-size: 13px; text-align: center; margin: 14px 0 0; }
+
+@media (max-width: 480px) {
+  .au-body { padding: 32px 16px 8px; }
+  .au-header { padding: 14px 16px; }
+}

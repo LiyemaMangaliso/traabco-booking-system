@@ -88,9 +88,12 @@ export default function Login() {
             <button type="button" className="lg-link-btn" onClick={() => navigate('/register')}>
               Create an account
             </button>
-            <button type="button" className="lg-link-btn" onClick={() => alert('Password reset process link triggered.')}>
+            <button type="button"
+            className="lg-link-btn"
+            onClick={() => navigate('/forgot-password')}
+            >
               Forgot password?
-            </button>
+              </button>
           </div>
 
           <button type="submit" className="lg-submit-btn">
